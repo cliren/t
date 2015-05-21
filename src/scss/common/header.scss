@@ -1,0 +1,71 @@
+
+.header {
+  @include position(fixed, 0 0 null 0);
+  z-index: 999;
+  height: 60px;
+  padding: $base-spacing-unit * 1.5;
+  background-color: #459410;
+  @include z-depth(1);
+  @include clearfix;
+
+  // Menubar
+  .menubar {
+    @include media-query(desk) {
+      display: none;
+    }
+
+    @include media-query(portable) {
+      float: left;
+    }
+  }
+
+  // Main Logo
+  .main-logo {
+    float: left;
+
+    a {
+      display: block;
+      padding: 0 $base-spacing-unit * 1.5;
+      border-radius: $base-round;
+      @include font-size(18px);
+      font-weight: 500;
+      color: white;
+      line-height: 36px;
+      text-decoration: none;
+      @include media-query(lap) {
+        @include font-size(24px);
+      }
+    }
+  }
+
+  // Main Nav
+  .main-nav {
+    float: right;
+
+    ul {
+      @extend %bare-list;
+
+      li {
+        float: left;
+        a {
+          display: block;
+          padding: 0 $base-spacing-unit * 1.5;
+          border-radius: $base-round;
+          @include font-size(18px);
+          font-weight: 500;
+          color: white;
+          line-height: 36px;
+          text-decoration: none;
+          @include media-query(lap) {
+            @include font-size(14px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.home .menubar {
+  display: none;
+}
+
